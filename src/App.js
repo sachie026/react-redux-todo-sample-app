@@ -8,11 +8,16 @@ import {
   Link
 } from "react-router-dom";
 
+import List from "./components/list"
+import Add from "./components/add"
+import Header from "./components/header"
+
 function App() {
   return (
-    <Router>
+    <Router >
+      <Header>
       <nav>
-          <ul>
+          <ul className="todo-list">
             <li>
               <Link to="/home">Home</Link>
             </li>
@@ -24,10 +29,13 @@ function App() {
             </li>
           </ul>
         </nav>
+        <p></p>
 
+      </Header>
+      
         <Switch>
           <Route path  = "/list">
-              List
+              <List />
           </Route>
 
           <Route path  = "/home">
@@ -35,7 +43,7 @@ function App() {
           </Route>
 
           <Route path  = "/add">
-              Add
+              <Add />
           </Route>
         </Switch>
     </Router>
