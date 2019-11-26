@@ -11,9 +11,20 @@ import {
 import List from "./components/list"
 import Add from "./components/add"
 import Header from "./components/header"
+import { Provider } from "react-redux"
+import { createStore } from "redux"
+import rootReducer from "./reducers/add"
+
+const store = createStore(rootReducer)
+
+store.subscribe(() => {
+  console.log(store.getState());
+});
 
 function App() {
   return (
+    <Provider store={store}>
+
     <Router >
       <Header>
       <nav>
@@ -47,6 +58,8 @@ function App() {
           </Route>
         </Switch>
     </Router>
+    </Provider>
+
   );
 }
 

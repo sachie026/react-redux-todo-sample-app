@@ -10,10 +10,9 @@ const Add = (state = [], action) => {
             ]
         ;
         default:
-            break;
+            return state;
         ;
     }
-    return null;
 }
 
 export default Add
