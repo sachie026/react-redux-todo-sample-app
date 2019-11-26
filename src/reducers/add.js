@@ -1,7 +1,13 @@
 const Add = (state = [], action) => {
     switch(action.type){
         case ("ADD"):
-        break;    
+            return [
+                ...state,
+                {
+                    id: action.id,
+                    title: action.title
+                }
+            ]
         ;
         default:
             break;
