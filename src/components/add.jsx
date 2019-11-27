@@ -5,23 +5,41 @@ import { connect} from "react-redux"
 class Add extends Component {
 
     handleAdd = () => {
-        this.props.inc("two");
+        this.props.inc(this.refs.entry.value);
     }
 
     render() {
-        console.log("render fro add")
+        const style = {
+            display : "flex",
+            flexDirection: "column",
+            alignItems: "center"
+        }
         return (
             <div className= "container">
-                <input type = "text" className = "entry-box" placeholder = "Add entry"/>
-                <button className = "entry-button" onClick ={this.handleAdd}>Add</button>
+
+                <div style = {style}>
+                    <div>
+                    {
+                        this.props.count
+                    }
+                    </div>
+                    <div>
+                    <input type = "text" ref = "entry" className = "entry-box" placeholder = "Add entry"/>
+                    <button className = "entry-button" onClick ={this.handleAdd}>Add</button>
+
+                    </div>
+
+                </div>
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
+    console.log("add state: ", state);
     return {
-
+       // countL state
+       count: state.length
     }
 }
 
