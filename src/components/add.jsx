@@ -14,12 +14,16 @@ class Add extends Component {
             flexDirection: "column",
             alignItems: "center"
         }
+
+        const labelStyle = {
+            marginBottom : 15
+        }
         return (
             <div className= "container">
 
                 <div style = {style}>
-                    <div>
-                    {
+                    <div style={labelStyle}>
+                    Todal entries: {
                         this.props.count
                     }
                     </div>

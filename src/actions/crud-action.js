@@ -14,3 +14,11 @@ export const removeTodo = (id) => {
         id: id
     }
 }
+
+export const thunkAction = () => {
+    return function(dispatch){
+        dispatch({
+            type: "TEST"
+        })
+    }
+}

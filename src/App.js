@@ -12,10 +12,15 @@ import List from "./components/list"
 import Add from "./components/add"
 import Header from "./components/header"
 import { Provider } from "react-redux"
-import { createStore } from "redux"
+import { createStore, applyMiddleware } from "redux"
 import rootReducer from "./reducers/add"
+import { thunkAction } from "./actions/crud-action"
 
-const store = createStore(rootReducer)
+import thunk from "redux-thunk"
+
+const store = createStore(rootReducer, applyMiddleware(thunk))
+
+store.dispatch(thunkAction())
 
 store.subscribe(() => {
   console.log(store.getState());
