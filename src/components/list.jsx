@@ -1,19 +1,19 @@
 import React, { Component } from 'react'
+import { ListItem } from "./listItem"
 import {connect} from "react-redux"
 
 class List extends Component {
+
     render() {
         return (    
-            <div className= "container">
-                <ul className="todo-list-ul">
-
-            {
-            this.props.list.map((item) => <li key = {item.id}>{item.title}</li>)
-            }
-                </ul>
-            </div>
+            <ListItem itemClick = {this.handleClick} list = {this.props.list}/>
         )
     }
+
+    handleClick = () => {
+        console.log("in container clicked");
+    }
+
 }
 
 

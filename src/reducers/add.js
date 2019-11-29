@@ -10,8 +10,8 @@ const Add = (state = [], action) => {
             ]
         ;
         case("TEST"):
-        console.log("testing");
-        return state;
+            console.log("thunk testing");
+            return state;
         default:
             return state;
         ;

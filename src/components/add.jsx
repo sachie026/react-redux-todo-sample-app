@@ -42,7 +42,6 @@ class Add extends Component {
 const mapStateToProps = (state) => {
     console.log("add state: ", state);
     return {
-       // countL state
        count: state.length
     }
 }
