@@ -5,9 +5,20 @@ import {connect} from "react-redux"
 class List extends Component {
 
     render() {
-        return (    
-            <ListItem itemClick = {this.handleClick} list = {this.props.list}/>
-        )
+        if(this.props.list.length === 0){
+            return (
+                <div className= "container">
+                    No entries to show
+                </div>   
+            )
+        }
+        else{
+            return (
+                <div className= "container">
+                    <ListItem itemClick = {this.handleClick} list = {this.props.list}/>
+                </div>    
+            )    
+        }
     }
 
     handleClick = () => {
