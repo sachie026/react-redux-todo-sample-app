@@ -7,14 +7,14 @@ const Add = (state = [], action) => {
                     id: action.id,
                     title: action.title
                 }
-            ]
-        ;
+            ];
+        
         case("TEST"):
             console.log("thunk testing");
             return state;
         default:
             return state;
-        ;
+        
     }
 }
 

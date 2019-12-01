@@ -23,14 +23,13 @@ class Add extends Component {
 
                 <div style = {style}>
                     <div style={labelStyle}>
-                    Todal entries: {
-                        this.props.count
-                    }
+                        Todal entries: {
+                            this.props.count
+                        }
                     </div>
                     <div>
-                    <input type = "text" ref = "entry" className = "entry-box" placeholder = "Add entry"/>
-                    <button className = "entry-button" onClick ={this.handleAdd}>Add</button>
-
+                        <input type = "text" ref = "entry" className = "entry-box" placeholder = "Add entry"/>
+                        <button className = "entry-button" onClick ={this.handleAdd}>Add</button>
                     </div>
 
                 </div>
